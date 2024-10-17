@@ -17,7 +17,7 @@
 @if "%DEBUG%"=="" @echo off
 @rem ##########################################################################
 @rem
-@rem  lab startup script for Windows
+@rem  ch-1 startup script for Windows
 @rem
 @rem ##########################################################################
 
@@ -33,7 +33,7 @@ set APP_HOME=%DIRNAME%..
 @rem Resolve any "." and ".." in APP_HOME to make it shorter.
 for %%i in ("%APP_HOME%") do set APP_HOME=%%~fi
 
-@rem Add default JVM options here. You can also use JAVA_OPTS and LAB_OPTS to pass JVM options to this script.
+@rem Add default JVM options here. You can also use JAVA_OPTS and CH_1_OPTS to pass JVM options to this script.
 set DEFAULT_JVM_OPTS=
 
 @rem Find java.exe
@@ -68,22 +68,22 @@ goto fail
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\lab.jar;%APP_HOME%\lib\gson-2.8.9.jar
+set CLASSPATH=%APP_HOME%\lib\ch-1.jar;%APP_HOME%\lib\gson-2.8.9.jar
 
 
-@rem Execute lab
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %LAB_OPTS%  -classpath "%CLASSPATH%" Main %*
+@rem Execute ch-1
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %CH_1_OPTS%  -classpath "%CLASSPATH%" Main %*
 
 :end
 @rem End local scope for the variables with windows NT shell
 if %ERRORLEVEL% equ 0 goto mainEnd
 
 :fail
-rem Set variable LAB_EXIT_CONSOLE if you need the _script_ return code instead of
+rem Set variable CH_1_EXIT_CONSOLE if you need the _script_ return code instead of
 rem the _cmd.exe /c_ return code!
 set EXIT_CODE=%ERRORLEVEL%
 if %EXIT_CODE% equ 0 set EXIT_CODE=1
-if not ""=="%LAB_EXIT_CONSOLE%" exit %EXIT_CODE%
+if not ""=="%CH_1_EXIT_CONSOLE%" exit %EXIT_CODE%
 exit /b %EXIT_CODE%
 
 :mainEnd

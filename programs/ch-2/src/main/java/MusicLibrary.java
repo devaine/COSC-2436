@@ -5,6 +5,7 @@
 // Imports
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -41,7 +42,11 @@ public class MusicLibrary {
 			e.printStackTrace();
 		}
 	}
-	
+
+	public void sortByTitle() {
+		Collections.sort(songs);
+	}
+
 	// calls the private `displaySongs` method, used for method overloading and encapsulation
 	public void displayAllSongs() {
 		displaySongs(songs);
@@ -76,6 +81,40 @@ public class MusicLibrary {
 			}
 		}
 		return null; // Not found
+	}
+
+
+	/* Selection Sort Algorithm:
+	 * 	- Basically what's happening is that whilst the for first for loop is iterating for 
+	 *		all elements in the original list, there is another, temporary list that's being generated that's will have a new element added if its under a specific condtition (the 2nd for loop) thus by the end of it, the `temp` list is a unique list that is ordered under a specific condition.
+	 */
+	public void selectionSortByScore() {
+		for(int i = 0; i < songs.size(); i++) {
+			int maxIdx = i;
+			for(int j = i + 1; j < songs.size(); j++) {
+				if(songs.get(j).getScore() > songs.get(maxIdx).getScore()) {
+					maxIdx = j;
+				}
+			}
+
+			Song temp = songs.get(maxIdx);
+			songs.set(maxIdx, songs.get(i));
+			songs.set(i, temp);
+		}
+	}
+
+	public void selectionSortByDanceability() {
+		for(int i = 0; i < songs.size() - 1;  i++) {
+			int maxIdx = i;
+			for(int j = i + 1; j < songs.size(); j++) {
+				if(songs.get(j).getDanceability() > songs.get(maxIdx).getDanceability()){
+					maxIdx = j;
+				}
+			}
+			Song temp = songs.get(maxIdx);
+			songs.set(maxIdx, songs.get(i));
+			songs.set(i, temp);
+		}
 	}
 
 }
