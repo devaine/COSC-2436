@@ -29,5 +29,8 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.9'
 }
 
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
+
 // Define the main class for the application
 mainClassName = 'Main'

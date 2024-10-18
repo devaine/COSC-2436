@@ -9,51 +9,21 @@
 public class Main {
 	public static void main(String[] args) {
 		MusicLibrary library = new MusicLibrary();
-		library.loadSongsFromFile("songs.json");
+		library.loadSongsFromFile("src/main/java/songs.json");
 
-		System.out.println("All songs in the library:");
-		library.displayAllSongs();
+		// Display All Songs Recursively
+		System.out.println("All songs in the library (recursive display): ");
+		library.displayAllSongsRecursive();
 		
-		// Test cases
-		String[] testCases = {
-			"Shape of You",
-			"Hotling Bling",
-			"Blinding Lights",
-			"AAA",
-			"ZZZ",
-			"Go Crazy",
-			"Imaginary Song"
-		};
+		// Test Recursive Binary Search
+		String searchTitle = "Shape of You";
 
-		for(String title : testCases) {
-			Song result = library.binarySearch(title);
-			if(result != null) {
-				System.out.println("\nFound: " + result);
-			} else {
-				System.out.println("\n'" + title + "'not found.");
-			}
-		}
-
-
-		// Binary Search Test
-		String searchTitle = "Go Crazy";
-		Song result = library.binarySearch(searchTitle);
+		Song result = library.binarySearchRecursive(searchTitle);
 		
 		if(result != null) {
 			System.out.println("\nFound: " + result);
 		} else {
-			System.out.println("\n'" + searchTitle + "' not found.");
-		}
-
-		// Test with a song that doesn't exist
-		searchTitle = "Imaginary Song";
-
-		result = library.binarySearch(searchTitle);
-		
-		if(result != null) {
-			System.out.println("\nFound: " + result);
-		} else {
-			System.out.println("\n'" + searchTitle + "' not found.");
+			System.out.println("\n'" + searchTitle + "' not found recursively.");
 		}
 	}
 }

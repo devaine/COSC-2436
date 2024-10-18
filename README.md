@@ -10,3 +10,6 @@ Lab 1:
     * See the [compatibility matrix](https://docs.gradle.org/current/userguide/compatibility.html) for more information on whcih gradle version to use.
 * Moreover if you want to list dependencies on `build.gradle`, make sure that you remove the `compile`, `runtime`, and other options under `dependencies` since they are [outdated](https://stackoverflow.com/a/66910991)
     * [Link for more information on dependencies](https://docs.gradle.org/current/userguide/declaring_dependencies.html)
+
+Lab 3:
+    - On `II. Setting Up the Development Environment`, make sure that on Step 7, correct it to `./gradlew build` since we're not using the application, but rather the wrapper.

@@ -14,7 +14,60 @@ import java.util.List;
 import java.util.Map;
 
 public class MusicLibrary {
-	private List<Song> songs;
+	private List<Song> songs = new ArrayList<>(); // NEW: Adding the Arraylist for 'song'
+	
+	/* Recursion:
+	 * 	Basically what's happening is that the public method 'displayAllSongsRecrusive' calls upon the private method 'displayAllSongsRecursive' with a starting index (0), as a starting point of where to begin showing all the songs.
+	 *	The private method 'displayAllSongsRecursive' basically has a Recursive case that whenever the Base case isn't true, then it will proceed to call itself with a parameter of the next index until the the base case, which is the ending case is suffice (true)
+	 *
+	 *	Time Complexity: O(n)
+	 *	Space Complexity: O(n)
+	 */
+
+	public void displayAllSongsRecursive() {
+		displayAllSongsRecursive(0);
+	}
+
+	private void displayAllSongsRecursive(int index) {
+		if (index >= songs.size()) {
+			return; // The Base Case: End of the List
+		}
+
+		System.out.println(songs.get(index));
+		displayAllSongsRecursive(index + 1); // Recursive Case: Keep recursiveness until Base Case is true.
+	}
+
+	/* Recursive Binary Search
+	 *	- The same concept with 'displayAllSongsRecursive' but Binary Search is implemented aswell
+	 *	the way it works is by checking on whether if the middle element has fit all conditions, if not, we compare to the left and right side, if either or fits the condition then it will recursively restart the same concept but on either the left/right side (a.k.a call itself but under different parameters to find the correct element)
+	 *
+	 * Time Complexity: O(log n) because it halfs the amount of space for each recursive call.
+	 * Space Complexity: O(log n) because of the call stack (recursiveness - parent functions will pause until task is finished)
+	 *
+	 */
+	
+	public Song binarySearchRecursive(String title) {
+		return binarySearchRecursive(title, 0, songs.size() - 1);
+	}
+
+	private Song binarySearchRecursive(String title, int left, int right) {
+		if (left > right) {
+			return null; // Base Case: N/A
+		}
+
+		int mid = (left + right) / 2;
+		Song midSong = songs.get(mid);
+
+		if (midSong.getTitle().equalsIgnoreCase(title)) {
+			return midSong; // Best case scenario
+		} else if (midSong.getTitle().compareTo(title) < 0) {
+			return binarySearchRecursive(title, mid + 1, right); // Search the Right Half
+		} else {
+			return binarySearchRecursive(title, left, mid - 1); // Search  the Left Half
+		}
+	}
+
+
 
 	public MusicLibrary(){
 		// Using arraylist for storing `Song` objects
