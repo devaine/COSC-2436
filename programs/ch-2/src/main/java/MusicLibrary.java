@@ -61,7 +61,7 @@ public class MusicLibrary {
 			System.out.println(song);
 		}
 	}
-
+	
 	public Song binarySearch(String title) {
 		int low = 0;
 		int high = songs.size() - 1;
@@ -73,8 +73,6 @@ public class MusicLibrary {
 			if(comparison == 0) {
 				return midSong;
 			} else if(comparison < 0) {
-				return midSong;
-			} else if (comparison < 0) {
 				low = mid + 1;
 			} else {
 				high = mid - 1;
@@ -86,7 +84,7 @@ public class MusicLibrary {
 
 	/* Selection Sort Algorithm:
 	 * 	- Basically what's happening is that whilst the for first for loop is iterating for 
-	 *		all elements in the original list, there is another, temporary list that's being generated that's will have a new element added if its under a specific condtition (the 2nd for loop) thus by the end of it, the `temp` list is a unique list that is ordered under a specific condition.
+	 *	all elements in the original list, there is another, temporary list that's being generated that's will have a new element added if its under a specific condtition ( check the 2nd for loop) thus by the end of it, the `temp` list is a unique list that is ordered under a specific condition.
 	 */
 	public void selectionSortByScore() {
 		for(int i = 0; i < songs.size(); i++) {

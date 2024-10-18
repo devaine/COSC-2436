@@ -11,10 +11,7 @@ public class Main {
 		MusicLibrary library = new MusicLibrary();
 		library.loadSongsFromFile("src/main/java/songs.json");
 
-		System.out.println("All songs in the library:");
-		library.displayAllSongs();
-
-		System.out.println("All songs in the library: ");
+		System.out.println("\nAll songs in the library:");
 		library.displayAllSongs();
 
 		System.out.println("\nTop songs by score: ");
