@@ -45,6 +45,11 @@ public class Song implements Comparable<Song> {
 	public double getDanceability() {
 		return danceability;
 	}
+	
+	// Adding 'getDuration()'
+	public int getDuration() {
+		return duration;
+	}
 
 	@Override
 	public int compareTo(Song otherSong) {
