@@ -23,7 +23,7 @@ public class Song implements Comparable<Song> {
 		// `this` is a keyword is to indicate the private variables of the `Song` class so the contrcutor can assign values when it's instantiated
 		this.title = title;
 		this.artist = artist;
-		this. score = score;
+		this.score = score;
 		this.genre = genre;
 		this.danceability = danceability;
 		this.energy = energy;
