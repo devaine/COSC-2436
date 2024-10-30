@@ -15,4 +15,4 @@ Lab 3:
     - On `II. Setting Up the Development Environment`, make sure that on Step 7, correct it to `./gradlew build` since we're not using the application, but rather the wrapper.
 
 Lab 4:
-    - On `V. Implementing the Main ALgorithm/Concept` you forgot to mention that you added `getDuration()` in the `Song.java` file which was easy to spot, but it must be said nevertheless.
+    - On `V. Implementing the Main Algorithm/Concept` you forgot to mention that you added `getDuration()` in the `Song.java` file which was easy to spot, but it must be said nevertheless.
